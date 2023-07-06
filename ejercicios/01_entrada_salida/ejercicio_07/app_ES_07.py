@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Martin Lionel
+apellido:Escalante
 ---
 Ejercicio: entrada_salida_07
 ---
@@ -50,17 +50,46 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
-        pass
+        #el cofigo int convierte el texto a entero y el codigo str convierte otra vez a texto
+        texto_uno = self.txt_operador_a.get()
+        entero_uno = int(texto_uno)
+        texto_dos = self.txt_operador_b.get()
+        entero_dos = int(texto_dos)
+        calculo = entero_uno + entero_dos
+        texto = str(calculo)
+        mensaje =("La suma es "+texto)
+        alert("ejercicio 7",message=mensaje)
 
     def btn_restar_on_click(self):
-        pass
+        texto_uno = self.txt_operador_a.get()
+        entero_uno = int(texto_uno)
+        texto_dos = self.txt_operador_b.get()
+        entero_dos = int(texto_dos)
+        calculo = entero_uno - entero_dos
+        texto = str(calculo)
+        mensaje = ("La resta es "+texto)
+        alert("ejercicio 7",message=mensaje)
 
     def btn_multiplicar_on_click(self):
-        pass
+        texto_uno = self.txt_operador_a.get()
+        entero_uno = int(texto_uno)
+        texto_dos = self.txt_operador_b.get()
+        entero_dos = int(texto_dos)
+        calculo = entero_uno * entero_dos
+        texto = str(calculo)
+        mensaje = ("La multiplicacion es "+texto)
+        alert("ejercicio 7",message=mensaje)      
 
     def btn_dividir_on_click(self):
-        pass
-        
+        texto_uno = self.txt_operador_a.get()
+        entero_uno = int(texto_uno)
+        texto_dos = self.txt_operador_b.get()
+        entero_dos = int(texto_dos)
+        calculo = entero_uno / entero_dos
+        texto = str(calculo)
+        mensaje = ("La division es de "+texto)
+        alert("ejercicio 7",message=mensaje)
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

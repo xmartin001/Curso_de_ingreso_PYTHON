@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre:Martin
+apellido:Escalante
 ---
 Ejercicio: entrada_salida_01
 ---
@@ -29,8 +29,8 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
-
+        """apartir de aqui sin borrar lo anterior, escribo el codigo"""
+        alert("ejercicio 1","Esto no anda, funcionaa")
 
 if __name__ == "__main__":
     app = App()

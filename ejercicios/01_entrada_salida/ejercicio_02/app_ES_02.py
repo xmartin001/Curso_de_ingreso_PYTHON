@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Martin Lionel
+apellido:Escalante
 ---
 Ejercicio: entrada_salida_02
 ---
@@ -28,7 +28,11 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        #con el prompt se interactua con la persona que esta detras de la pantalla
+        resultado = prompt(title = "prompt",prompt ="ingrese su nombre")
+        alert(title = "ejercicio 2",message= resultado)
+        #el mensaje tiene que ser entendible para el usuario
+        #pass
         
         
     

@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Martin Lionel 
+apellido:Escalante
 ---
 Ejercicio: entrada_salida_04
 ---
@@ -34,9 +34,14 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-        
-    
+        #
+        nombre = self.txt_nombre.get()
+        self.txt_nombre.delete(0,10000)
+        #borra las letras del resultado una vez en este caso despues de poner el nombre, borra 10mil letras       
+        self.txt_nombre.insert(0,nombre)
+        #aqui se pone la palabra nueva
+        alert("ejercicio 4",message=nombre)
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
