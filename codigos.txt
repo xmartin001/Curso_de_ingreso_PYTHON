@@ -1,0 +1,11 @@
+alert(notificacion)
+
+prompt(interactua con el usuario)
+
+self.txt_(nombre o edad,etc).get()
+
+int(self.txt_(x).get()) (numero a entero) 1,2,3,4
+
+float(self.txt_(x).get()) (numero a real) 0.5,1.5,2.5,3.5
+
+str(entero o real) (numero a texto)
