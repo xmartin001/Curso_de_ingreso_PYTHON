@@ -5,6 +5,9 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+    nombre:Martin Lionel
+    apellido:Escalante
+
 Todas las lámparas están  al mismo precio de $800 pesos final.
 		A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
 		B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
@@ -38,8 +41,50 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        texto_cantidad = self.combobox_cantidad.get()
+        cantidad = int(texto_cantidad)
+        marca = self.combobox_marca.get()
+
+        descuento = 0
+        if cantidad >= 6:
+            descuento = 50
+        elif cantidad == 5:
+            if marca == "ArgentinaLuz":
+                descuento = 40
+            else:
+                descuento = 30
+        elif cantidad == 4:
+            if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+                descuento = 25
+            else:
+                descuento = 20
+        elif cantidad == 3:
+            if marca == "ArgentinaLuz":
+                descuento = 15
+            elif marca == "FelipeLamparas":
+                descuento = 10
+            else:
+                descuento = 5
+
+        operacion = 800 * cantidad
+        descuento_final = operacion * descuento / 100
+        valor = operacion - descuento_final
+
+        descuento_texto = str(descuento_final)
+
+        descuento_agregado = 0
+        if valor > 4000:
+            descuento_agregado = 5
         
+        valor_agregado = valor * descuento_agregado / 100
+        precio_final = valor - valor_agregado
+
+        valor_agregado_texto = str(valor_agregado)
+        precio_texto = str(precio_final)
+
+        mensaje = ("El descuento es de " + descuento_texto +", el descuento agregado pasado los 4000 es de " + valor_agregado_texto + " y el precio final es " + precio_texto + " $")
+
+        alert("tp 4, if",mensaje)
     
 if __name__ == "__main__":
     app = App()
