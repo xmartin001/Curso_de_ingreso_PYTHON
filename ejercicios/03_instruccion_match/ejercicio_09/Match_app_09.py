@@ -6,6 +6,9 @@ import customtkinter
 
 
 '''
+    nombre:Martin Lionel 
+    apellido:Escalante
+    ---
 Una agencia de viajes cobra $15.000 por cada estadía como base. 
 Luego para calcular las tarifas total realiza el siguiente cálculo, 
 en función de la estación del año y del destino elegido:
@@ -52,8 +55,45 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        estacion = self.combobox_estaciones.get()
+        destino = self.combobox_destino.get()
+
+        match(estacion):
+            case "Invierno":
+                match(destino):
+                    case "Bariloche":
+                        porcentaje = 15000 * 20 / 100
+                        valor = 15000 + porcentaje
+                    case "Mar del plata":
+                        porcentaje = 15000 * 20 / 100
+                        valor = 15000 - porcentaje
+                    case _:
+                        porcentaje = 15000 * 10 / 100
+                        valor = 15000 - porcentaje
+                mensaje = "El precio de su estadia en Invierno es de {0}".format(valor)
             
+            case "Verano":
+                match(destino):
+                    case "Bariloche":
+                        porcentaje = 15000 * 20 / 100
+                        valor = 15000 - porcentaje
+                    case "Mar del plata":
+                        porcentaje = 15000 * 20 / 100
+                        valor = 15000 + porcentaje
+                    case _:
+                        porcentaje = 15000 * 10 / 100
+                        valor = 15000 + porcentaje
+                mensaje = "El precio de su estadia en Verano es de {0}".format(valor)
+            case _:
+                match(destino):
+                    case "Cordoba":
+                        valor = 15000
+                    case _:
+                        porcentaje = 15000 * 10 / 100
+                        valor = 15000 + porcentaje
+                mensaje = "El precio de la estadia si es Otoño o Primavera es de {0}".format(valor)
+
+        alert("ej 9, match", mensaje)
     
 if __name__ == "__main__":
     app = App()
